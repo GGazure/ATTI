@@ -17,6 +17,7 @@
 		2B24E2F926F0F60F0068A173 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2F826F0F60F0068A173 /* UserViewController.swift */; };
 		2B24E2FC26F0FAF20068A173 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */; };
 		2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */; };
+		2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2B24E2F826F0F60F0068A173 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
+		2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				2B24E2E126F0ED790068A173 /* Main.storyboard */,
 				2B24E2F226F0F5C80068A173 /* HomeViewController.swift */,
 				2B24E2F526F0F5F00068A173 /* GlobalViewController.swift */,
+				2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */,
 				2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */,
 				2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */,
 				2B24E2F826F0F60F0068A173 /* UserViewController.swift */,
@@ -153,6 +156,7 @@
 				2B24E2F926F0F60F0068A173 /* UserViewController.swift in Sources */,
 				2B24E2F626F0F5F00068A173 /* GlobalViewController.swift in Sources */,
 				2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */,
+				2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */,
 				2B24E2DE26F0ED790068A173 /* SceneDelegate.swift in Sources */,
 				2B24E2FC26F0FAF20068A173 /* PlayViewController.swift in Sources */,
 				2B24E2F326F0F5C80068A173 /* HomeViewController.swift in Sources */,
