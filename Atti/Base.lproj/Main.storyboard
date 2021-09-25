@@ -24,7 +24,7 @@
                         <segue destination="AnU-ss-Dsg" kind="relationship" relationship="viewControllers" id="zaY-pD-eoG"/>
                         <segue destination="Qns-bK-xip" kind="relationship" relationship="viewControllers" id="AEo-eT-GbP"/>
                         <segue destination="Rjn-7f-LZl" kind="relationship" relationship="viewControllers" id="0Ci-Wp-Fu5"/>
-                        <segue destination="NOt-sK-cTA" kind="relationship" relationship="viewControllers" id="uDv-NM-XUO"/>
+                        <segue destination="lb1-n9-UcW" kind="relationship" relationship="viewControllers" id="uDv-NM-XUO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9O-ov-bK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -250,11 +250,16 @@
                         <viewLayoutGuide key="safeArea" id="Zil-P8-qM8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="AMU-4R-KVT"/>
+                    <navigationItem key="navigationItem" id="1s0-uJ-EjA">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.square.on.square" catalog="system" id="kIz-Op-4e6"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnAdd" destination="kIz-Op-4e6" id="vR6-Ea-efV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdf-XZ-6wR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3328.985507246377" y="943.52678571428567"/>
+            <point key="canvasLocation" x="4239.130434782609" y="943.52678571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kjr-Zd-z0O">
@@ -275,6 +280,25 @@
             </objects>
             <point key="canvasLocation" x="-855.07246376811599" y="924.77678571428567"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Baq-NI-4l7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lb1-n9-UcW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="AMU-4R-KVT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z5z-H6-5uc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NOt-sK-cTA" kind="relationship" relationship="rootViewController" id="rxe-L8-mlj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YvC-IC-qxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3328.985507246377" y="943.52678571428567"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Unknown" width="225" height="225"/>
@@ -283,6 +307,7 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="plus.square.on.square" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

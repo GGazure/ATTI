@@ -15,14 +15,23 @@ class UserViewController: UIViewController {
     var postStackView: UIStackView!
     var postSize: Int!
     
+    @IBOutlet weak var btnAdd: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         postSize = Int(self.view.bounds.width / 2 - 20)
         
+        btnAdd.target = self
+        btnAdd.action = #selector(addPost)
+        
         setupuserView()
         setupfollowView()
         setupScrollView()
+    }
+    
+    @objc func addPost(){
+        print("다이어리 쓰기")
     }
     
     private func setupuserView(){
@@ -33,7 +42,7 @@ class UserViewController: UIViewController {
         userView.spacing = 20
         
         userView.addArrangedSubview(UIView())
-    
+        
         let profileImg = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
         profileImg.layer.cornerRadius = 40
         profileImg.backgroundColor = #colorLiteral(red: 0.8756349477, green: 0.9197035373, blue: 1, alpha: 1)
