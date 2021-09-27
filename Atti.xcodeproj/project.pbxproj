@@ -18,6 +18,7 @@
 		2B24E2FC26F0FAF20068A173 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */; };
 		2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */; };
 		2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */; };
+		AFECB55527019144001469DD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFECB55327019144001469DD /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
 		2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDetailViewController.swift; sourceTree = "<group>"; };
+		AFECB55427019144001469DD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */,
 				2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */,
 				2B24E2F826F0F60F0068A173 /* UserViewController.swift */,
+				AFECB55327019144001469DD /* Model.xcdatamodeld */,
 				2B24E2E426F0ED7E0068A173 /* Assets.xcassets */,
 				2B24E2E626F0ED7E0068A173 /* LaunchScreen.storyboard */,
 				2B24E2E926F0ED7E0068A173 /* Info.plist */,
@@ -157,6 +160,7 @@
 				2B24E2F626F0F5F00068A173 /* GlobalViewController.swift in Sources */,
 				2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */,
 				2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */,
+				AFECB55527019144001469DD /* Model.xcdatamodeld in Sources */,
 				2B24E2DE26F0ED790068A173 /* SceneDelegate.swift in Sources */,
 				2B24E2FC26F0FAF20068A173 /* PlayViewController.swift in Sources */,
 				2B24E2F326F0F5C80068A173 /* HomeViewController.swift in Sources */,
@@ -361,6 +365,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AFECB55327019144001469DD /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AFECB55427019144001469DD /* Model.xcdatamodel */,
+			);
+			currentVersion = AFECB55427019144001469DD /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2B24E2D026F0ED790068A173 /* Project object */;
 }

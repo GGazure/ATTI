@@ -6,204 +6,166 @@
 //
 
 import UIKit
+import CoreData
 
-class UserViewController: UIViewController {
-
-    var stackView: UIStackView!
-    var userView: UIStackView!
-    var followView: UIStackView!
-    var postStackView: UIStackView!
-    var postSize: Int!
+class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnAdd: UIBarButtonItem!
+    
+    var list: [NSManagedObject]!
+    
+    func fetch() -> [NSManagedObject] {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Diary")
+        
+        let sort = NSSortDescriptor(key: "writedate", ascending: false)
+        fetchRequest.sortDescriptors = [sort]
+        
+        let res = try! context.fetch(fetchRequest)
+        return res
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        postSize = Int(self.view.bounds.width / 2 - 20)
-        
         btnAdd.target = self
         btnAdd.action = #selector(addPost)
         
-        setupuserView()
-        setupfollowView()
-        setupScrollView()
+        list = self.fetch()
+        if list.count != 0 {
+            for i in 0...(list.count-1){
+                print(i)
+                //addfunc(i: i)
+            }
+        }
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+
     }
     
-    @objc func addPost(){
+    @objc func addPost() -> Bool {
         print("다이어리 쓰기")
+        //return mydelete(object: list[0])
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let object = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: context)
+        object.setValue("New", forKey: "title")
+        object.setValue(Date(), forKey: "writedate")
+        
+        do{
+            try context.save()
+            self.list.insert(object, at: 0)
+            self.collectionView.reloadData()
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
     }
     
-    private func setupuserView(){
-        userView = UIStackView()
-        userView.axis = .vertical
-        userView.distribution = .fill
-        userView.alignment = .center
-        userView.spacing = 20
+    func mydelete(object: NSManagedObject) -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
         
-        userView.addArrangedSubview(UIView())
+        context.delete(object)
         
-        let profileImg = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
-        profileImg.layer.cornerRadius = 40
-        profileImg.backgroundColor = #colorLiteral(red: 0.8756349477, green: 0.9197035373, blue: 1, alpha: 1)
-        profileImg.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        profileImg.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        userView.addArrangedSubview(profileImg)
-        
-        let name = UILabel()
-        name.text = "Name"
-        name.textAlignment = .center
-        userView.addArrangedSubview(name)
-        
-        userView.setCustomSpacing(10, after: name)
-        
-        let email = UILabel()
-        email.text = "Email@gmail.com"
-        email.textAlignment = .center
-        email.font = UIFont.systemFont(ofSize: 14)
-        email.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        userView.addArrangedSubview(email)
-        
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
-        btn.backgroundColor = .blue
-        btn.setTitle("Follow", for: .normal)
-        btn.layer.cornerRadius = 5
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        btn.addTarget(self, action: #selector(addfunc), for: .touchUpInside)
-        btn.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        btn.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        userView.addArrangedSubview(btn)
-        
-        userView.addArrangedSubview(UIView())
+        do {
+            try context.save()
+            list = self.fetch()
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
     }
     
-    private func makeFollow(num: Int, descript: String) -> UIStackView{
-        let stV = UIStackView()
-        stV.axis = .vertical
-        stV.distribution = .fill
-        let number = UILabel()
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        number.text = numberFormatter.string(for: num)!
-        number.textColor = .black
-        number.textAlignment = .center
-        number.font = UIFont.systemFont(ofSize: 17)
-        
-        let description = UILabel()
-        description.text = descript
-        description.textColor = .black
-        description.textAlignment = .center
-        description.font = UIFont.systemFont(ofSize: 14)
-        description.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        stV.addArrangedSubview(number)
-        stV.addArrangedSubview(description)
-        return stV
+    // cell 개수
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.list.count
     }
     
-    private func setupfollowView(){
-        let following = makeFollow(num: 245, descript: "Following")
-        let followers = makeFollow(num: 4679, descript: "Followers")
-        let likes = makeFollow(num: 236000, descript: "likes received")
+    // cell 정의
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
+        cell.DiaryImg.backgroundColor = .blue
+        cell.Diarytitle.text = list[indexPath.section].value(forKey: "title") as! String
         
-        followView = UIStackView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 70))
-        followView.addArrangedSubview(following)
-        followView.addArrangedSubview(followers)
-        followView.addArrangedSubview(likes)
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.cornerRadius = 8
         
-        followView.axis = .horizontal
-        followView.distribution = .fillEqually
-        followView.alignment = .fill
-        followView.spacing = 0
-        
-        followView.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        followView.widthAnchor.constraint(equalToConstant: self.view.bounds.width).isActive = true
+        return cell
     }
     
-    private func setupScrollView(){
-        let scrollView = UIScrollView()
-        view.addSubview(scrollView)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            scrollView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
-            scrollView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
-            scrollView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            scrollView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
-        ])
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) ->
+    UICollectionReusableView {
+        //ofKind에 UICollectionView.elementKindSectionHeader로 헤더를 설정해주고
+                //withReuseIdentifier에 헤더뷰 identifier를 넣어주고
+                //생성한 헤더뷰로 캐스팅해준다.
+        let headerview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "reusableView", for: indexPath) as! reusableView
         
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .fill
-        stackView.spacing = 10
-        self.stackView = stackView
-        scrollView.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
-        ])
+        headerview.UserImg.layer.cornerRadius = 40
+        headerview.UserImg.backgroundColor =  #colorLiteral(red: 0.8756349477, green: 0.9197035373, blue: 1, alpha: 1)
+        headerview.UserImg.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        headerview.UserImg.widthAnchor.constraint(equalToConstant: 80).isActive = true
         
-        stackView.addArrangedSubview(userView)
-        let line1 = makeLine(width: self.view.bounds.width, height: 1)
-        stackView.addArrangedSubview(line1)
+        headerview.UserName.text = "Name"
+        headerview.UserName.textAlignment = .center
         
-        stackView.addArrangedSubview(followView)
+        headerview.UserEmail.text = "Email@gmail.com"
+        headerview.UserEmail.textAlignment = .center
+        headerview.UserEmail.font = UIFont.systemFont(ofSize: 14)
+        headerview.UserEmail.textColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
-        let line2 = makeLine(width: self.view.bounds.width, height: 1)
-        stackView.addArrangedSubview(line2)
+        headerview.UserBtn.backgroundColor = .blue
+        headerview.UserBtn.setTitle("Follow", for: .normal)
+        headerview.UserBtn.layer.cornerRadius = 5
+        headerview.UserBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         
-        postStackView = UIStackView()
-        postStackView.axis = .vertical
-        postStackView.alignment = .fill
-        postStackView.distribution = .fill
-        postStackView.spacing = 10
-        postStackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.addArrangedSubview(postStackView)
-    }
-    
-    @objc func addfunc(){
-        let HstackView = UIStackView()
-        HstackView.axis = .horizontal
-        HstackView.distribution = .equalSpacing
-        HstackView.alignment = .fill
-        HstackView.spacing = 10
-        HstackView.addArrangedSubview(UIView())
-        HstackView.addArrangedSubview(makePost())
-        HstackView.addArrangedSubview(makePost())
-        HstackView.addArrangedSubview(UIView())
         
-        postStackView.addArrangedSubview(HstackView)
+        return headerview
     }
 
-    private func makePost() -> UIView{
-        let imgV = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        var img = UIImage(named: "image-solid")
-        
-        img = img?.withTintColor(.white)
-        imgV.image = img
-        
-        let post = UIView(frame: CGRect(x:0, y: 0, width: postSize, height: postSize))
-        
-        post.backgroundColor = #colorLiteral(red: 0.8756349477, green: 0.9197035373, blue: 1, alpha: 1)
-        post.layer.cornerRadius = 10
-        imgV.center = CGPoint(x: post.frame.size.width / 2,
-                                     y: post.frame.size.height / 2)
-        post.addSubview(imgV)
-        
-        post.heightAnchor.constraint(equalToConstant: CGFloat(postSize)).isActive = true
-        post.widthAnchor.constraint(equalToConstant: CGFloat(postSize)).isActive = true
-        
-        return post
-    }
- 
-    private func makeLine(width: CGFloat, height: CGFloat) -> UIView{
-        let line = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        line.backgroundColor = #colorLiteral(red: 0.9372986469, green: 0.9372986469, blue: 0.9372986469, alpha: 1)
-        line.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
-        line.widthAnchor.constraint(equalToConstant: CGFloat(width)).isActive = true
-        return line
-    }
 
+    // cell 사이즈
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.bounds.width-42)/2
+        return CGSize(width: width, height: width/3*4)
+    }
+    
+    // 아래 cell 과의 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 32
+    }
+    
+    // 좌우 cell 간의 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 10
+    }
+    
+    // collectionView의 상하좌우 간격 값
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 30, left: 16, bottom: 10, right: 16)
+    }
+    
+}
+
+// cell 클래스
+class DiaryCell : UICollectionViewCell {
+    @IBOutlet weak var DiaryImg: UIImageView!
+    @IBOutlet weak var Diarytitle: UILabel!
+}
+
+class reusableView : UICollectionReusableView {
+    @IBOutlet weak var UserImg: UIImageView!
+    @IBOutlet weak var UserName: UILabel!
+    @IBOutlet weak var UserEmail: UILabel!
+    @IBOutlet weak var UserBtn: UIButton!
+    
 }
