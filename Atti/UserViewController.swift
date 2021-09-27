@@ -92,7 +92,11 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
         cell.DiaryImg.backgroundColor = .blue
-        cell.Diarytitle.text = list[indexPath.section].value(forKey: "title") as! String
+        
+        let date = list[indexPath.row].value(forKey: "writedate") as! NSDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        cell.Diarytitle.text = dateFormatter.string(from: date as Date)
         
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.lightGray.cgColor
