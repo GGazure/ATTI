@@ -37,7 +37,6 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if list.count != 0 {
             for i in 0...(list.count-1){
                 print(i)
-                //addfunc(i: i)
             }
         }
         
@@ -48,7 +47,6 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @objc func addPost() -> Bool {
         print("다이어리 쓰기")
-        //return mydelete(object: list[0])
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -76,6 +74,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         do {
             try context.save()
             list = self.fetch()
+            self.collectionView.reloadData()
             return true
         } catch {
             context.rollback()
@@ -158,12 +157,18 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         UIEdgeInsets(top: 30, left: 16, bottom: 10, right: 16)
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+      didSelectItemAt indexPath: IndexPath) {
+        print("Cell \(indexPath.row) clicked")
+        mydelete(object: list[indexPath.row])
+      }
 }
 
 // cell 클래스
 class DiaryCell : UICollectionViewCell {
     @IBOutlet weak var DiaryImg: UIImageView!
     @IBOutlet weak var Diarytitle: UILabel!
+    
 }
 
 class reusableView : UICollectionReusableView {
