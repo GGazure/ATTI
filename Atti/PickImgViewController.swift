@@ -11,6 +11,95 @@ import BSImagePicker
 import CoreData
 
 class PickImgViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var selectedAssets: [PHAsset] = []
+    var userSelectedImages: [UIImage] = []
+    
+    @IBAction func title(_ sender: UITextField) {
+        titlestr = sender.text ?? "무제"
+    }
+    @IBOutlet weak var body: UITextView!
+    
+    var titlestr: String = "무제"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        body.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        body.layer.borderWidth = 1.0
+        body.layer.borderColor = UIColor.black.cgColor
+
+    }
+    @IBAction func saveDiary(_ sender: Any) {
+        print("다이어리 쓰기")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let object = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: context)
+        object.setValue(titlestr, forKey: "title")
+        object.setValue(body.text, forKey: "body")
+        object.setValue(Date(), forKey: "writedate")
+        for i in 0..<userSelectedImages.count {
+            object.setValue(userSelectedImages[i].pngData(), forKey: "img" + String(i))
+        }
+        object.setValue(userSelectedImages.count, forKey: "imgSize")
+        
+        do{
+            try context.save()
+        } catch {
+            context.rollback()
+        }
+        
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func pressedAddButton(_ sender: UIButton) {
+        let imagePicker = ImagePickerController()
+        imagePicker.settings.selection.max = 10
+        imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
+        let vc = self
+        vc.presentImagePicker(imagePicker, select: { (asset) in
+            
+        }, deselect: { (asset) in
+            
+        }, cancel: { (assets) in
+            
+        }, finish: { (assets) in
+            for i in 0..<assets.count {
+                self.selectedAssets.append(assets[i])
+            }
+            self.convertAssetToImages()
+            self.selectedAssets = []
+            self.collectionView.reloadData()
+        })
+    }
+    
+    
+    func convertAssetToImages() {
+        if selectedAssets.count != 0 {
+            for i in 0..<selectedAssets.count {
+                let imageManager = PHImageManager.default()
+                let option = PHImageRequestOptions()
+                option.isSynchronous = true
+                var thumbnail = UIImage()
+                
+                imageManager.requestImage(for: selectedAssets[i],
+                                            targetSize: CGSize(width: 200, height: 200),
+                                            contentMode: .aspectFit,
+                                            options: option) { (result, info) in thumbnail = result! }
+                    
+                let data = thumbnail.jpegData(compressionQuality: 0.7)
+                let newImage = UIImage(data: data!)
+                    
+                self.userSelectedImages.append(newImage! as UIImage)
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         userSelectedImages.count
     }
@@ -59,91 +148,6 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return footerview
     }
-    
-
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    var selectedAssets: [PHAsset] = []
-    var userSelectedImages: [UIImage] = []
-    
-    @IBAction func title(_ sender: Any) {
-        
-    }
-    @IBOutlet weak var body: UITextView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        body.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-        body.layer.borderWidth = 1.0
-        body.layer.borderColor = UIColor.black.cgColor
-
-    }
-    @IBAction func saveDiary(_ sender: Any) {
-        print("다이어리 쓰기")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let object = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: context)
-        object.setValue("New", forKey: "title")
-        object.setValue(Date(), forKey: "writedate")
-        
-        do{
-            try context.save()
-        } catch {
-            context.rollback()
-        }
-        
-        self.navigationController?.popToRootViewController(animated: true)
-    }
-    
-    @IBAction func pressedAddButton(_ sender: UIButton) {
-            
-        let imagePicker = ImagePickerController()
-        imagePicker.settings.selection.max = 10
-        imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
-        let vc = self
-        vc.presentImagePicker(imagePicker, select: { (asset) in
-            
-        }, deselect: { (asset) in
-            
-        }, cancel: { (assets) in
-            
-        }, finish: { (assets) in
-            for i in 0..<assets.count {
-                self.selectedAssets.append(assets[i])
-            }
-            self.convertAssetToImages()
-            self.selectedAssets = []
-            self.collectionView.reloadData()
-        })
-        
-    }
-    
-    
-    func convertAssetToImages() {
-        if selectedAssets.count != 0 {
-            for i in 0..<selectedAssets.count {
-                let imageManager = PHImageManager.default()
-                let option = PHImageRequestOptions()
-                option.isSynchronous = true
-                var thumbnail = UIImage()
-                
-                imageManager.requestImage(for: selectedAssets[i],
-                                            targetSize: CGSize(width: 200, height: 200),
-                                            contentMode: .aspectFit,
-                                            options: option) { (result, info) in thumbnail = result! }
-                    
-                let data = thumbnail.jpegData(compressionQuality: 0.7)
-                let newImage = UIImage(data: data!)
-                    
-                self.userSelectedImages.append(newImage! as UIImage)
-            }
-        }
-    }
-    
 }
 
 // cell 클래스

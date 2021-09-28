@@ -12,10 +12,11 @@
         <attribute name="img7" optional="YES" attributeType="Binary"/>
         <attribute name="img8" optional="YES" attributeType="Binary"/>
         <attribute name="img9" optional="YES" attributeType="Binary"/>
+        <attribute name="imgSize" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="writedate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Diary" positionX="-63" positionY="-18" width="128" height="224"/>
+        <element name="Diary" positionX="-63" positionY="-18" width="128" height="239"/>
     </elements>
 </model>

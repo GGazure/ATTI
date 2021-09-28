@@ -94,12 +94,20 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // cell 정의
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
-        cell.DiaryImg.backgroundColor = .blue
         
+        if list[indexPath.row].value(forKey: "imgSize") as! Int > 0 {
+            let unencodedData = list[indexPath.row].value(forKey: "img0") as? Data
+            cell.DiaryImg.image = UIImage(data: unencodedData!)
+        }
+        
+        /*
         let date = list[indexPath.row].value(forKey: "writedate") as! NSDate
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.dd.HH:mm"
         cell.Diarytitle.text = dateFormatter.string(from: date as Date)
+        */
+        
+        cell.Diarytitle.text = list[indexPath.row].value(forKey: "title") as! String
         
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.lightGray.cgColor
