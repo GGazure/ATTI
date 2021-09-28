@@ -8,6 +8,7 @@
 import UIKit
 import Photos
 import BSImagePicker
+import CoreData
 
 class PickImgViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -80,11 +81,28 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
         body.layer.borderColor = UIColor.black.cgColor
 
     }
+    @IBAction func saveDiary(_ sender: Any) {
+        print("다이어리 쓰기")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let object = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: context)
+        object.setValue("New", forKey: "title")
+        object.setValue(Date(), forKey: "writedate")
+        
+        do{
+            try context.save()
+        } catch {
+            context.rollback()
+        }
+        
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
             
         let imagePicker = ImagePickerController()
-        imagePicker.settings.selection.max = 5
+        imagePicker.settings.selection.max = 10
         imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
         let vc = self
         vc.presentImagePicker(imagePicker, select: { (asset) in
@@ -98,6 +116,7 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
                 self.selectedAssets.append(assets[i])
             }
             self.convertAssetToImages()
+            self.selectedAssets = []
             self.collectionView.reloadData()
         })
         

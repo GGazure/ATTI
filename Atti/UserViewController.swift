@@ -30,11 +30,6 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-        btnAdd.target = self
-        btnAdd.action = #selector(addPost)
- */
-        
         list = self.fetch()
         if list.count != 0 {
             for i in 0...(list.count-1){
@@ -45,6 +40,11 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         collectionView.dataSource = self
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        list = self.fetch()
+        collectionView.reloadData()
     }
     
     /*
@@ -98,7 +98,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let date = list[indexPath.row].value(forKey: "writedate") as! NSDate
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = "MM.dd.HH:mm"
         cell.Diarytitle.text = dateFormatter.string(from: date as Date)
         
         cell.layer.borderWidth = 1

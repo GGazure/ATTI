@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,6 @@
 		2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */; };
 		2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */; };
 		4DE59EBA93504C121A1FC4BA /* Pods_Atti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6A4A5F79A0F536B373E062 /* Pods_Atti.framework */; };
-		AF3F803E2702C43D0094F0FB /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3F803D2702C43D0094F0FB /* WriteViewController.swift */; };
 		AF3F80402702C5DE0094F0FB /* PickImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3F803F2702C5DE0094F0FB /* PickImgViewController.swift */; };
 		AFECB55527019144001469DD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFECB55327019144001469DD /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -39,7 +38,6 @@
 		2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
 		2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDetailViewController.swift; sourceTree = "<group>"; };
-		AF3F803D2702C43D0094F0FB /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		AF3F803F2702C5DE0094F0FB /* PickImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImgViewController.swift; sourceTree = "<group>"; };
 		AFECB55427019144001469DD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DF609EBEE52DC89045064FDA /* Pods-Atti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atti.release.xcconfig"; path = "Target Support Files/Pods-Atti/Pods-Atti.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 				2B24E2DD26F0ED790068A173 /* SceneDelegate.swift */,
 				2B24E2E126F0ED790068A173 /* Main.storyboard */,
 				AF3F803F2702C5DE0094F0FB /* PickImgViewController.swift */,
-				AF3F803D2702C43D0094F0FB /* WriteViewController.swift */,
 				2B24E2F226F0F5C80068A173 /* HomeViewController.swift */,
 				2B24E2F526F0F5F00068A173 /* GlobalViewController.swift */,
 				2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */,
@@ -112,7 +109,6 @@
 				209A8AFEB305FC9F1A689B73 /* Pods-Atti.debug.xcconfig */,
 				DF609EBEE52DC89045064FDA /* Pods-Atti.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -239,7 +235,6 @@
 				2B24E2DE26F0ED790068A173 /* SceneDelegate.swift in Sources */,
 				2B24E2FC26F0FAF20068A173 /* PlayViewController.swift in Sources */,
 				AF3F80402702C5DE0094F0FB /* PickImgViewController.swift in Sources */,
-				AF3F803E2702C43D0094F0FB /* WriteViewController.swift in Sources */,
 				2B24E2F326F0F5C80068A173 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

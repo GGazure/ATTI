@@ -544,7 +544,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c0t-Kb-b4N">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="bbI-kp-ldF"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="bbI-kp-ldF">
+                            <connections>
+                                <action selector="saveDiary:" destination="y13-fI-YCs" id="Wk5-od-MBR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="body" destination="pxM-ze-6oO" id="nBX-3n-6Dg"/>
