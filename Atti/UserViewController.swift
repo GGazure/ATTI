@@ -30,8 +30,10 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         btnAdd.target = self
         btnAdd.action = #selector(addPost)
+ */
         
         list = self.fetch()
         if list.count != 0 {
@@ -45,6 +47,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     }
     
+    /*
     @objc func addPost() -> Bool {
         print("다이어리 쓰기")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -64,6 +67,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return false
         }
     }
+ */
     
     func mydelete(object: NSManagedObject) -> Bool {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
