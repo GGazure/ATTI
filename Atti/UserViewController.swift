@@ -99,13 +99,16 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let unencodedData = list[indexPath.row].value(forKey: "img0") as? Data
             cell.DiaryImg.image = UIImage(data: unencodedData!)
         }
+        else {
+            cell.DiaryImg.image = UIImage(named: "Unknown")
+        }
         
-        /*
+        
         let date = list[indexPath.row].value(forKey: "writedate") as! NSDate
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.dd.HH:mm"
-        cell.Diarytitle.text = dateFormatter.string(from: date as Date)
-        */
+        cell.Diarydate.text = dateFormatter.string(from: date as Date)
+        // cell.Diarydate.text = list[indexPath.row].value(forKey: "feeling") as! String
         
         cell.Diarytitle.text = list[indexPath.row].value(forKey: "title") as! String
         
@@ -180,6 +183,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
 class DiaryCell : UICollectionViewCell {
     @IBOutlet weak var DiaryImg: UIImageView!
     @IBOutlet weak var Diarytitle: UILabel!
+    @IBOutlet weak var Diarydate: UILabel!
     
 }
 

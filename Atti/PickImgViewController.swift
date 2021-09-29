@@ -9,6 +9,7 @@ import UIKit
 import Photos
 import BSImagePicker
 import CoreData
+import Alamofire
 
 class PickImgViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -36,25 +37,9 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     @IBAction func saveDiary(_ sender: Any) {
         print("다이어리 쓰기")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         
-        let object = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: context)
-        object.setValue(titlestr, forKey: "title")
-        object.setValue(body.text, forKey: "body")
-        object.setValue(Date(), forKey: "writedate")
-        for i in 0..<userSelectedImages.count {
-            object.setValue(userSelectedImages[i].pngData(), forKey: "img" + String(i))
-        }
-        object.setValue(userSelectedImages.count, forKey: "imgSize")
+        postTest()
         
-        do{
-            try context.save()
-        } catch {
-            context.rollback()
-        }
-        
-        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
@@ -144,11 +129,131 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
     UICollectionReusableView {
         let footerview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "imgCollectionReusable", for: indexPath) as! imgCollectionReusable
         
+        footerview.frame.size.width = collectionView.bounds.width-100
+        footerview.frame.size.height = collectionView.bounds.width-100
         footerview.addimgBtn.addTarget(self, action: #selector(pressedAddButton(_:)), for: .touchUpInside)
         
         return footerview
     }
+    
+    
+    func postTest() {
+        let url = "http://svc.saltlux.ai:31781"
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 10
+            
+        
+            // POST 로 보낼 정보
+        let arg = ["type":"1", "query":body.text as String] as Dictionary
+        let params = ["key":"aa121118-e337-4242-80f8-1439d1b4c7b5", "serviceId":"11987300804", "argument": arg] as Dictionary
+        
+        do {
+            try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
+        } catch {
+            print("http Body Error")
+        }
+            
+        AF.request(request).responseString { (response) in
+            switch response.result {
+            case .success(_):
+                guard let res = response.data else {return}
+                do {
+                    print("It worked!")
+                    
+                    let decoder = JSONDecoder()
+                    let json = try decoder.decode(Feelings.self, from: res)
+                    
+                    if json.result.count > 0 {
+                        let str = json.result[0][1]
+                        switch str {
+                        case .string(let x):
+                            self.afterGetFeelings(feelings: x)
+                        case .double(_): break
+                        }
+                    }
+                    else{
+                        self.afterGetFeelings(feelings: "")
+                    }
+                        
+                } catch {
+                    print("error!\(error)")
+                }
+                
+            case .failure(let error):
+                print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
+            }
+        }
+    }
+    
+    func afterGetFeelings(feelings: String) {
+        print("다이어리 저장")
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let object = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: context)
+        object.setValue(titlestr, forKey: "title")
+        object.setValue(body.text, forKey: "body")
+        object.setValue(Date(), forKey: "writedate")
+        object.setValue(feelings, forKey: "feeling")
+        for i in 0..<userSelectedImages.count {
+            object.setValue(userSelectedImages[i].pngData(), forKey: "img" + String(i))
+        }
+        object.setValue(userSelectedImages.count, forKey: "imgSize")
+        
+        do{
+            try context.save()
+        } catch {
+            context.rollback()
+        }
+        
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
+   
+// https://app.quicktype.io
+struct Feelings: Codable {
+    let query, type: String
+    let result: [[Result]]
+
+    enum CodingKeys: String, CodingKey {
+        case query, type
+        case result = "Result"
+    }
+}
+
+enum Result: Codable {
+    case double(Double)
+    case string(String)
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let x = try? container.decode(Double.self) {
+            self = .double(x)
+            return
+        }
+        if let x = try? container.decode(String.self) {
+            self = .string(x)
+            return
+        }
+        throw DecodingError.typeMismatch(Result.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Result"))
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .double(let x):
+            try container.encode(x)
+        case .string(let x):
+            try container.encode(x)
+        }
+    }
+}
+
+
 
 // cell 클래스
 class imgCell : UICollectionViewCell {

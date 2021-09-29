@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Diary" representedClassName="DiaryMO" syncable="YES" codeGenerationType="class">
         <attribute name="body" optional="YES" attributeType="String"/>
+        <attribute name="feeling" optional="YES" attributeType="String"/>
         <attribute name="img0" optional="YES" attributeType="Binary"/>
         <attribute name="img1" optional="YES" attributeType="Binary"/>
         <attribute name="img2" optional="YES" attributeType="Binary"/>
@@ -17,6 +18,6 @@
         <attribute name="writedate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Diary" positionX="-63" positionY="-18" width="128" height="239"/>
+        <element name="Diary" positionX="-63" positionY="-18" width="128" height="254"/>
     </elements>
 </model>
