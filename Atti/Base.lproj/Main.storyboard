@@ -97,7 +97,7 @@
                                         <size key="customSize" width="166" height="206"/>
                                         <connections>
                                             <outlet property="globalImage" destination="OXG-Ql-3Pn" id="nbf-M7-6ya"/>
-                                            <segue destination="It3-xB-H8p" kind="show" id="9zV-Be-9gw"/>
+                                            <outlet property="globalTitle" destination="b2J-Ri-WQh" id="i0Z-X8-MBc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -124,13 +124,13 @@
         <!--Global Detail View Controller-->
         <scene sceneID="k3A-pS-9t9">
             <objects>
-                <viewController id="It3-xB-H8p" customClass="GlobalDetailViewController" customModule="Atti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GlobalDetailViewController" id="It3-xB-H8p" customClass="GlobalDetailViewController" customModule="Atti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VuN-aS-YDi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3TK-GB-Vao">
-                                <rect key="frame" x="0.0" y="88" width="414" height="400"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="wuM-MA-8br"/>
@@ -161,47 +161,48 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="cellImage" destination="Nov-7j-OjJ" id="oMT-XS-GGS"/>
+                                            <outlet property="diaryImage" destination="Nov-7j-OjJ" id="oMT-XS-GGS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATTI 대박~~~~~~~~~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzg-YW-FO3">
-                                <rect key="frame" x="16" y="518" width="382" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="zqz-o0-9TV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neJ-QB-As7">
-                                <rect key="frame" x="16" y="576" width="382" height="187"/>
+                                <rect key="frame" x="16" y="532" width="382" height="280"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZMF-SR-ABi">
+                                <rect key="frame" x="16" y="474" width="382" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="h2O-O1-lTc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KB2-c5-4Xh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="neJ-QB-As7" firstAttribute="leading" secondItem="KB2-c5-4Xh" secondAttribute="leading" constant="16" id="3AS-UL-IGM"/>
-                            <constraint firstItem="neJ-QB-As7" firstAttribute="top" secondItem="Lzg-YW-FO3" secondAttribute="bottom" constant="30" id="3XL-ti-aOR"/>
-                            <constraint firstItem="Lzg-YW-FO3" firstAttribute="top" secondItem="3TK-GB-Vao" secondAttribute="bottom" constant="30" id="5Dn-2h-76s"/>
                             <constraint firstItem="neJ-QB-As7" firstAttribute="centerX" secondItem="VuN-aS-YDi" secondAttribute="centerX" id="ItB-JN-mm5"/>
                             <constraint firstItem="KB2-c5-4Xh" firstAttribute="bottom" secondItem="neJ-QB-As7" secondAttribute="bottom" constant="50" id="JOj-dT-qqm"/>
+                            <constraint firstItem="neJ-QB-As7" firstAttribute="top" secondItem="ZMF-SR-ABi" secondAttribute="bottom" constant="30" id="Kn4-g1-s5V"/>
+                            <constraint firstItem="ZMF-SR-ABi" firstAttribute="leading" secondItem="KB2-c5-4Xh" secondAttribute="leading" constant="16" id="RJv-BR-e0g"/>
                             <constraint firstItem="3TK-GB-Vao" firstAttribute="leading" secondItem="KB2-c5-4Xh" secondAttribute="leading" id="S0G-S5-4fx"/>
-                            <constraint firstItem="Lzg-YW-FO3" firstAttribute="leading" secondItem="KB2-c5-4Xh" secondAttribute="leading" constant="16" id="XPM-oK-CN1"/>
                             <constraint firstItem="KB2-c5-4Xh" firstAttribute="trailing" secondItem="3TK-GB-Vao" secondAttribute="trailing" id="aRj-oK-6Lt"/>
+                            <constraint firstItem="ZMF-SR-ABi" firstAttribute="centerX" secondItem="VuN-aS-YDi" secondAttribute="centerX" id="bvj-zc-5mz"/>
                             <constraint firstItem="3TK-GB-Vao" firstAttribute="top" secondItem="KB2-c5-4Xh" secondAttribute="top" id="i2c-5O-PHq"/>
-                            <constraint firstItem="Lzg-YW-FO3" firstAttribute="centerX" secondItem="VuN-aS-YDi" secondAttribute="centerX" id="s99-2I-8AO"/>
+                            <constraint firstItem="ZMF-SR-ABi" firstAttribute="top" secondItem="3TK-GB-Vao" secondAttribute="bottom" constant="30" id="n20-8q-iek"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="71I-u6-zGz"/>
                     <connections>
                         <outlet property="collectionView" destination="3TK-GB-Vao" id="xFk-k5-AHc"/>
+                        <outlet property="diaryContent" destination="neJ-QB-As7" id="20O-8X-6Ub"/>
+                        <outlet property="diaryTitle" destination="ZMF-SR-ABi" id="wWS-TJ-gCQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDk-ZL-7Km" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -255,6 +256,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdf-XZ-6wR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3328.985507246377" y="943.52678571428567"/>
+        </scene>
+        <!--Diary View Controller-->
+        <scene sceneID="a6S-nY-akY">
+            <objects>
+                <viewController id="HBQ-q2-D8Q" customClass="DiaryViewController" customModule="Atti" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rQS-vk-7cN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cVs-vJ-lsr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4d6-mS-Y6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3294" y="1753"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kjr-Zd-z0O">

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,9 +18,14 @@
 		2B24E2FC26F0FAF20068A173 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */; };
 		2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */; };
 		2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */; };
+		2B862FFF27009BE9008F9860 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B862FFE27009BE9008F9860 /* DiaryViewController.swift */; };
+		2B86300527044E8F008F9860 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B86300427044E8F008F9860 /* GoogleService-Info.plist */; };
+		2B86300727045398008F9860 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B86300627045398008F9860 /* Diary.swift */; };
+		8C8EA8256850DCDF962F1891 /* Pods_Atti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B261388C24AC29CC029696C /* Pods_Atti.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B261388C24AC29CC029696C /* Pods_Atti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Atti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B24E2D826F0ED790068A173 /* Atti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B24E2DB26F0ED790068A173 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B24E2DD26F0ED790068A173 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +39,11 @@
 		2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
 		2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDetailViewController.swift; sourceTree = "<group>"; };
+		2B862FFE27009BE9008F9860 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		2B86300427044E8F008F9860 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2B86300627045398008F9860 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		2D3838580A73A98F325148FF /* Pods-Atti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atti.debug.xcconfig"; path = "Target Support Files/Pods-Atti/Pods-Atti.debug.xcconfig"; sourceTree = "<group>"; };
+		36CD9E63E57CE11F3F17BFB9 /* Pods-Atti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atti.release.xcconfig"; path = "Target Support Files/Pods-Atti/Pods-Atti.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8EA8256850DCDF962F1891 /* Pods_Atti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +63,8 @@
 			children = (
 				2B24E2DA26F0ED790068A173 /* Atti */,
 				2B24E2D926F0ED790068A173 /* Products */,
+				72B1DFE10004744EA1DC18B2 /* Pods */,
+				D12F4F7583B55A346A25B381 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,15 +84,35 @@
 				2B24E2E126F0ED790068A173 /* Main.storyboard */,
 				2B24E2F226F0F5C80068A173 /* HomeViewController.swift */,
 				2B24E2F526F0F5F00068A173 /* GlobalViewController.swift */,
+				2B86300627045398008F9860 /* Diary.swift */,
 				2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */,
 				2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */,
 				2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */,
 				2B24E2F826F0F60F0068A173 /* UserViewController.swift */,
+				2B862FFE27009BE9008F9860 /* DiaryViewController.swift */,
 				2B24E2E426F0ED7E0068A173 /* Assets.xcassets */,
 				2B24E2E626F0ED7E0068A173 /* LaunchScreen.storyboard */,
 				2B24E2E926F0ED7E0068A173 /* Info.plist */,
+				2B86300427044E8F008F9860 /* GoogleService-Info.plist */,
 			);
 			path = Atti;
+			sourceTree = "<group>";
+		};
+		72B1DFE10004744EA1DC18B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D3838580A73A98F325148FF /* Pods-Atti.debug.xcconfig */,
+				36CD9E63E57CE11F3F17BFB9 /* Pods-Atti.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D12F4F7583B55A346A25B381 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B261388C24AC29CC029696C /* Pods_Atti.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B24E2EC26F0ED7E0068A173 /* Build configuration list for PBXNativeTarget "Atti" */;
 			buildPhases = (
+				4624D5AC25AA636D53973A5D /* [CP] Check Pods Manifest.lock */,
 				2B24E2D426F0ED790068A173 /* Sources */,
 				2B24E2D526F0ED790068A173 /* Frameworks */,
 				2B24E2D626F0ED790068A173 /* Resources */,
+				58116DF7D73D3A63DDF1DED5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B24E2E826F0ED7E0068A173 /* LaunchScreen.storyboard in Resources */,
+				2B86300527044E8F008F9860 /* GoogleService-Info.plist in Resources */,
 				2B24E2E526F0ED7E0068A173 /* Assets.xcassets in Resources */,
 				2B24E2E326F0ED790068A173 /* Main.storyboard in Resources */,
 			);
@@ -147,12 +183,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4624D5AC25AA636D53973A5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Atti-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58116DF7D73D3A63DDF1DED5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Atti/Pods-Atti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Atti/Pods-Atti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Atti/Pods-Atti-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2B24E2D426F0ED790068A173 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2B24E2DC26F0ED790068A173 /* AppDelegate.swift in Sources */,
+				2B86300727045398008F9860 /* Diary.swift in Sources */,
+				2B862FFF27009BE9008F9860 /* DiaryViewController.swift in Sources */,
 				2B24E2F926F0F60F0068A173 /* UserViewController.swift in Sources */,
 				2B24E2F626F0F5F00068A173 /* GlobalViewController.swift in Sources */,
 				2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */,
@@ -303,6 +383,7 @@
 		};
 		2B24E2ED26F0ED7E0068A173 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D3838580A73A98F325148FF /* Pods-Atti.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +403,7 @@
 		};
 		2B24E2EE26F0ED7E0068A173 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36CD9E63E57CE11F3F17BFB9 /* Pods-Atti.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
