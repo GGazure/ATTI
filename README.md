@@ -6,10 +6,10 @@ saltlux.ai
 
 ### 라이브러리
 CocoaPods로 설치.  
-₩₩₩
+```
   pod "BSImagePicker", "~> 3.1"
   pod "Alamofire", "~> 5.2"
-₩₩₩
+```
 
 ---
 
