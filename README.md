@@ -13,6 +13,8 @@ CocoaPods로 설치
 
 ---
 
+## 업데이트
+
 #### 09.27
 UserViewController.swift: CollectionView로 유저뷰 제작. 로컬 DB로 Core Data 추가.  
 
