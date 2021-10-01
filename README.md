@@ -1,10 +1,10 @@
 # ATTI
 
-### 사용한 오픈소스
-#### API
+## 사용한 오픈소스
+### API
 saltlux.ai
 
-#### 라이브러리
+### 라이브러리
 CocoaPods로 설치
 ₩₩₩
   pod "BSImagePicker", "~> 3.1"
