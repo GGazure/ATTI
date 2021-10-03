@@ -12,11 +12,6 @@ struct Diary: Codable {
     let title : String
     let content :  String
     let imageURL : String
-    
-//    let id: Int
-//    let rank: Int
-//    let name: String
-//    let cardImageURL : String
 
 }
 

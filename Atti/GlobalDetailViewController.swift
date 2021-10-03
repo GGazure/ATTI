@@ -113,7 +113,10 @@ class GlobalDetailViewController: UIViewController, UICollectionViewDelegate, UI
     // FireStorage - image 저장
     func uploadImage(_ image: UIImage, completion: @escaping (_ url: URL?) -> ()) {
         
-        let date = Date.init()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let date = formatter.string(from: Date())
+        
         let storageRef = Storage.storage().reference().child("\(date).png")
         let imgData = imageArray[0].pngData()
         let metaData = StorageMetadata()
@@ -122,7 +125,6 @@ class GlobalDetailViewController: UIViewController, UICollectionViewDelegate, UI
         storageRef.putData(imgData!, metadata: metaData) { metaData, error in
             if error == nil {
                 print("success")
-                print(date)
                 storageRef.downloadURL(completion: { url, error in
                     completion(url!)
                 })

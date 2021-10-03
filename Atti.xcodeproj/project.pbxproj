@@ -18,7 +18,6 @@
 		2B24E2FC26F0FAF20068A173 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */; };
 		2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */; };
 		2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */; };
-		2B862FFF27009BE9008F9860 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B862FFE27009BE9008F9860 /* DiaryViewController.swift */; };
 		2B86300527044E8F008F9860 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B86300427044E8F008F9860 /* GoogleService-Info.plist */; };
 		2B86300727045398008F9860 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B86300627045398008F9860 /* Diary.swift */; };
 		8C8EA8256850DCDF962F1891 /* Pods_Atti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B261388C24AC29CC029696C /* Pods_Atti.framework */; };
@@ -39,7 +38,6 @@
 		2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
 		2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDetailViewController.swift; sourceTree = "<group>"; };
-		2B862FFE27009BE9008F9860 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		2B86300427044E8F008F9860 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2B86300627045398008F9860 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		2D3838580A73A98F325148FF /* Pods-Atti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atti.debug.xcconfig"; path = "Target Support Files/Pods-Atti/Pods-Atti.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 				2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */,
 				2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */,
 				2B24E2F826F0F60F0068A173 /* UserViewController.swift */,
-				2B862FFE27009BE9008F9860 /* DiaryViewController.swift */,
 				2B24E2E426F0ED7E0068A173 /* Assets.xcassets */,
 				2B24E2E626F0ED7E0068A173 /* LaunchScreen.storyboard */,
 				2B24E2E926F0ED7E0068A173 /* Info.plist */,
@@ -232,7 +229,6 @@
 			files = (
 				2B24E2DC26F0ED790068A173 /* AppDelegate.swift in Sources */,
 				2B86300727045398008F9860 /* Diary.swift in Sources */,
-				2B862FFF27009BE9008F9860 /* DiaryViewController.swift in Sources */,
 				2B24E2F926F0F60F0068A173 /* UserViewController.swift in Sources */,
 				2B24E2F626F0F5F00068A173 /* GlobalViewController.swift in Sources */,
 				2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */,

@@ -257,21 +257,6 @@
             </objects>
             <point key="canvasLocation" x="3328.985507246377" y="943.52678571428567"/>
         </scene>
-        <!--Diary View Controller-->
-        <scene sceneID="a6S-nY-akY">
-            <objects>
-                <viewController id="HBQ-q2-D8Q" customClass="DiaryViewController" customModule="Atti" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rQS-vk-7cN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="cVs-vJ-lsr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4d6-mS-Y6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3294" y="1753"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kjr-Zd-z0O">
             <objects>
