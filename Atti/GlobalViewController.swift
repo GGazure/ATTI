@@ -14,6 +14,7 @@ class GlobalViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     var ref: DatabaseReference! //Firebase Realtime Database reference
     var diaryList : [Diary] = []
+    var artistDiaryList : [Diary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,8 @@ class GlobalViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let cardList = Array(cardData.values)
                 
                 // -> 정렬 순서 나중에 바꾸기
-                self.diaryList = cardList.sorted { $0.rank < $1.rank }
+//                self.diaryList = cardList.sorted { $0.rank < $1.rank }
+                self.diaryList = cardList
                 
                 // UI main thread에서 처리
                 DispatchQueue.main.async {
@@ -53,6 +55,7 @@ class GlobalViewController: UIViewController, UICollectionViewDelegate, UICollec
     // cell 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         diaryList.count
+       // 10
     }
     
     // cell 정의
@@ -60,11 +63,11 @@ class GlobalViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GlobalCell", for: indexPath) as! GlobalCell
         
         // -> Image data 형식 변경하기
-        let imageURL = URL(string: diaryList[indexPath.row].cardImageURL)
+        let imageURL = URL(string: diaryList[indexPath.row].imageURL)
         let data = try? Data(contentsOf: imageURL!)
         
         cell.globalImage.image = UIImage(data: data!)
-        cell.globalTitle.text = diaryList[indexPath.row].name
+        cell.globalTitle.text = diaryList[indexPath.row].title
         
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.lightGray.cgColor

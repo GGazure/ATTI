@@ -7,5 +7,6 @@ target 'Atti' do
 
   # Pods for Atti
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
 
 end
