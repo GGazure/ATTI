@@ -19,6 +19,19 @@
 		2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */; };
 		2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */; };
 		4DE59EBA93504C121A1FC4BA /* Pods_Atti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6A4A5F79A0F536B373E062 /* Pods_Atti.framework */; };
+		92D04883270B4EBD006F19AD /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0487B270B4EBC006F19AD /* InstagramView.swift */; };
+		92D04884270B4EBD006F19AD /* InstagramApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0487C270B4EBC006F19AD /* InstagramApi.swift */; };
+		92D04885270B4EBD006F19AD /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0487D270B4EBC006F19AD /* StoryView.swift */; };
+		92D04886270B4EBD006F19AD /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0487E270B4EBC006F19AD /* PostView.swift */; };
+		92D04887270B4EBD006F19AD /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0487F270B4EBC006F19AD /* WebView.swift */; };
+		92D04888270B4EBD006F19AD /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D04880270B4EBC006F19AD /* Story.swift */; };
+		92D04889270B4EBD006F19AD /* InstagramTestUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D04881270B4EBD006F19AD /* InstagramTestUser.swift */; };
+		92D0488A270B4EBD006F19AD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D04882270B4EBD006F19AD /* Post.swift */; };
+		92D0488E270B4EC3006F19AD /* TwitterViewTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 92D0488B270B4EC3006F19AD /* TwitterViewTemplate.html */; };
+		92D0488F270B4EC3006F19AD /* TwitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0488C270B4EC3006F19AD /* TwitterView.swift */; };
+		92D04890270B4EC3006F19AD /* TwitterHTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0488D270B4EC3006F19AD /* TwitterHTMLView.swift */; };
+		92D04892270B5567006F19AD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D04891270B5567006F19AD /* HomeView.swift */; };
+		92F4C148270B4BE00092E123 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F4C147270B4BE00092E123 /* WebKit.framework */; };
 		AF316F1B270ACBAD00B0DD20 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF316F1A270ACBAD00B0DD20 /* UserDetailViewController.swift */; };
 		AF3F80402702C5DE0094F0FB /* PickImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3F803F2702C5DE0094F0FB /* PickImgViewController.swift */; };
 		AFECB55527019144001469DD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFECB55327019144001469DD /* Model.xcdatamodeld */; };
@@ -39,6 +52,19 @@
 		2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
 		2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDetailViewController.swift; sourceTree = "<group>"; };
+		92D0487B270B4EBC006F19AD /* InstagramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
+		92D0487C270B4EBC006F19AD /* InstagramApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramApi.swift; sourceTree = "<group>"; };
+		92D0487D270B4EBC006F19AD /* StoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		92D0487E270B4EBC006F19AD /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		92D0487F270B4EBC006F19AD /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		92D04880270B4EBC006F19AD /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		92D04881270B4EBD006F19AD /* InstagramTestUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramTestUser.swift; sourceTree = "<group>"; };
+		92D04882270B4EBD006F19AD /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		92D0488B270B4EC3006F19AD /* TwitterViewTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TwitterViewTemplate.html; sourceTree = "<group>"; };
+		92D0488C270B4EC3006F19AD /* TwitterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterView.swift; sourceTree = "<group>"; };
+		92D0488D270B4EC3006F19AD /* TwitterHTMLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterHTMLView.swift; sourceTree = "<group>"; };
+		92D04891270B5567006F19AD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		92F4C147270B4BE00092E123 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		AF316F1A270ACBAD00B0DD20 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		AF3F803F2702C5DE0094F0FB /* PickImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImgViewController.swift; sourceTree = "<group>"; };
 		AFECB55427019144001469DD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -51,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F4C148270B4BE00092E123 /* WebKit.framework in Frameworks */,
 				4DE59EBA93504C121A1FC4BA /* Pods_Atti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +88,7 @@
 		04831F659780BAC1F9CC8A3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92F4C147270B4BE00092E123 /* WebKit.framework */,
 				DF6A4A5F79A0F536B373E062 /* Pods_Atti.framework */,
 			);
 			name = Frameworks;
@@ -87,6 +115,7 @@
 		2B24E2DA26F0ED790068A173 /* Atti */ = {
 			isa = PBXGroup;
 			children = (
+				92D04878270B4E45006F19AD /* SNS */,
 				2B24E2DB26F0ED790068A173 /* AppDelegate.swift */,
 				2B24E2DD26F0ED790068A173 /* SceneDelegate.swift */,
 				2B24E2E126F0ED790068A173 /* Main.storyboard */,
@@ -115,6 +144,41 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		92D04878270B4E45006F19AD /* SNS */ = {
+			isa = PBXGroup;
+			children = (
+				92D0487A270B4E55006F19AD /* Instagram */,
+				92D04879270B4E4C006F19AD /* Twitter */,
+				92D04891270B5567006F19AD /* HomeView.swift */,
+			);
+			path = SNS;
+			sourceTree = "<group>";
+		};
+		92D04879270B4E4C006F19AD /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				92D0488D270B4EC3006F19AD /* TwitterHTMLView.swift */,
+				92D0488C270B4EC3006F19AD /* TwitterView.swift */,
+				92D0488B270B4EC3006F19AD /* TwitterViewTemplate.html */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
+		92D0487A270B4E55006F19AD /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				92D0487C270B4EBC006F19AD /* InstagramApi.swift */,
+				92D04881270B4EBD006F19AD /* InstagramTestUser.swift */,
+				92D0487B270B4EBC006F19AD /* InstagramView.swift */,
+				92D04882270B4EBD006F19AD /* Post.swift */,
+				92D0487E270B4EBC006F19AD /* PostView.swift */,
+				92D04880270B4EBC006F19AD /* Story.swift */,
+				92D0487D270B4EBC006F19AD /* StoryView.swift */,
+				92D0487F270B4EBC006F19AD /* WebView.swift */,
+			);
+			path = Instagram;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,7 +190,7 @@
 				2B24E2D426F0ED790068A173 /* Sources */,
 				2B24E2D526F0ED790068A173 /* Frameworks */,
 				2B24E2D626F0ED790068A173 /* Resources */,
-				34698E978D437EC7FCFDD099 /* [CP] Embed Pods Frameworks */,
+				5256D36BF954CE91BEB5103A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B24E2E826F0ED7E0068A173 /* LaunchScreen.storyboard in Resources */,
+				92D0488E270B4EC3006F19AD /* TwitterViewTemplate.html in Resources */,
 				2B24E2E526F0ED7E0068A173 /* Assets.xcassets in Resources */,
 				2B24E2E326F0ED790068A173 /* Main.storyboard in Resources */,
 			);
@@ -205,7 +270,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		34698E978D437EC7FCFDD099 /* [CP] Embed Pods Frameworks */ = {
+		5256D36BF954CE91BEB5103A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -230,16 +295,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B24E2DC26F0ED790068A173 /* AppDelegate.swift in Sources */,
+				92D04887270B4EBD006F19AD /* WebView.swift in Sources */,
 				2B24E2F926F0F60F0068A173 /* UserViewController.swift in Sources */,
+				92D04888270B4EBD006F19AD /* Story.swift in Sources */,
 				2B24E2F626F0F5F00068A173 /* GlobalViewController.swift in Sources */,
+				92D04892270B5567006F19AD /* HomeView.swift in Sources */,
 				2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */,
 				2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */,
 				AFECB55527019144001469DD /* Model.xcdatamodeld in Sources */,
 				2B24E2DE26F0ED790068A173 /* SceneDelegate.swift in Sources */,
+				92D04889270B4EBD006F19AD /* InstagramTestUser.swift in Sources */,
+				92D04884270B4EBD006F19AD /* InstagramApi.swift in Sources */,
 				2B24E2FC26F0FAF20068A173 /* PlayViewController.swift in Sources */,
 				AF3F80402702C5DE0094F0FB /* PickImgViewController.swift in Sources */,
+				92D04890270B4EC3006F19AD /* TwitterHTMLView.swift in Sources */,
+				92D04885270B4EBD006F19AD /* StoryView.swift in Sources */,
+				92D0488F270B4EC3006F19AD /* TwitterView.swift in Sources */,
 				2B24E2F326F0F5C80068A173 /* HomeViewController.swift in Sources */,
 				AF316F1B270ACBAD00B0DD20 /* UserDetailViewController.swift in Sources */,
+				92D0488A270B4EBD006F19AD /* Post.swift in Sources */,
+				92D04886270B4EBD006F19AD /* PostView.swift in Sources */,
+				92D04883270B4EBD006F19AD /* InstagramView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +470,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jsy.Atti;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benpark.Atti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -408,13 +484,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Q6MH57SWY;
+				DEVELOPMENT_TEAM = 9TWAKVPQXY;
 				INFOPLIST_FILE = Atti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jsy.Atti;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benpark.Atti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
