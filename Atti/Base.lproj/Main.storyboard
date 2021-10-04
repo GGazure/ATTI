@@ -337,8 +337,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-tc-jK2" userLabel="Following">
                                                     <rect key="frame" x="0.0" y="0.0" width="138" height="37.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdZ-I0-tK9">
-                                                            <rect key="frame" x="48.5" y="0.0" width="41.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdZ-I0-tK9">
+                                                            <rect key="frame" x="55" y="0.0" width="28" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -354,8 +354,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lI7-KA-oIW" userLabel="Followers">
                                                     <rect key="frame" x="138" y="0.0" width="138" height="37.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnJ-j3-i3t">
-                                                            <rect key="frame" x="48.5" y="0.0" width="41.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnJ-j3-i3t">
+                                                            <rect key="frame" x="53.5" y="0.0" width="31" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -371,8 +371,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-nH-mNI" userLabel="Likes">
                                                     <rect key="frame" x="276" y="0.0" width="138" height="37.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2M-8Z-1Tf">
-                                                            <rect key="frame" x="48.5" y="0.0" width="41.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2M-8Z-1Tf">
+                                                            <rect key="frame" x="54" y="0.0" width="30" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -493,7 +493,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCq-Vx-DYi">
-                                <rect key="frame" x="16" y="606" width="382" height="187"/>
+                                <rect key="frame" x="16" y="602" width="382" height="201"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -537,23 +537,32 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRW-bV-NIb">
+                                <rect key="frame" x="16" y="577" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eAc-La-Rhx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xRW-bV-NIb" firstAttribute="top" secondItem="cIr-1W-L8e" secondAttribute="bottom" id="1rY-Ne-a7g"/>
+                            <constraint firstItem="xRW-bV-NIb" firstAttribute="leading" secondItem="eAc-La-Rhx" secondAttribute="leading" constant="16" id="D6c-jZ-0eV"/>
                             <constraint firstItem="wCq-Vx-DYi" firstAttribute="centerX" secondItem="eAc-La-Rhx" secondAttribute="centerX" id="HOd-rO-Kyz" userLabel="Text View.centerX = centerX"/>
                             <constraint firstItem="eAc-La-Rhx" firstAttribute="top" secondItem="MHJ-Uo-4AA" secondAttribute="top" id="HXb-NJ-Yiq"/>
+                            <constraint firstItem="eAc-La-Rhx" firstAttribute="trailing" secondItem="xRW-bV-NIb" secondAttribute="trailing" constant="16" id="I0m-65-qat"/>
                             <constraint firstItem="wCq-Vx-DYi" firstAttribute="leading" secondItem="eAc-La-Rhx" secondAttribute="leading" constant="16" id="JzL-fz-wdx"/>
                             <constraint firstItem="cIr-1W-L8e" firstAttribute="leading" secondItem="eAc-La-Rhx" secondAttribute="leading" constant="16" id="LmG-Xd-7u3"/>
                             <constraint firstItem="eqI-XH-80w" firstAttribute="top" secondItem="MHJ-Uo-4AA" secondAttribute="bottom" id="T2d-4g-eO4"/>
                             <constraint firstItem="eAc-La-Rhx" firstAttribute="trailing" secondItem="eqI-XH-80w" secondAttribute="trailing" id="WXl-40-FPH"/>
-                            <constraint firstItem="eAc-La-Rhx" firstAttribute="bottom" secondItem="wCq-Vx-DYi" secondAttribute="bottom" constant="20" id="d0i-vt-l6d"/>
+                            <constraint firstItem="eAc-La-Rhx" firstAttribute="bottom" secondItem="wCq-Vx-DYi" secondAttribute="bottom" constant="10" id="d0i-vt-l6d"/>
                             <constraint firstItem="cIr-1W-L8e" firstAttribute="top" secondItem="eqI-XH-80w" secondAttribute="bottom" constant="30" id="dhR-f1-TIu"/>
                             <constraint firstItem="MHJ-Uo-4AA" firstAttribute="leading" secondItem="eAc-La-Rhx" secondAttribute="leading" id="hJ0-OY-TKi"/>
                             <constraint firstItem="cIr-1W-L8e" firstAttribute="centerX" secondItem="eAc-La-Rhx" secondAttribute="centerX" id="n1I-FS-J0h" userLabel="ATTI 대박~~~~~~~~~.centerX = centerX"/>
                             <constraint firstItem="eqI-XH-80w" firstAttribute="leading" secondItem="eAc-La-Rhx" secondAttribute="leading" id="yGX-6E-k3a"/>
                             <constraint firstItem="eAc-La-Rhx" firstAttribute="trailing" secondItem="MHJ-Uo-4AA" secondAttribute="trailing" id="ye3-dj-Cui" userLabel="Safe Area.trailing = Stack View.trailing"/>
-                            <constraint firstItem="wCq-Vx-DYi" firstAttribute="top" secondItem="cIr-1W-L8e" secondAttribute="bottom" constant="30" id="zck-rA-0Qa"/>
+                            <constraint firstItem="wCq-Vx-DYi" firstAttribute="top" secondItem="xRW-bV-NIb" secondAttribute="bottom" constant="10" id="zck-rA-0Qa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jox-s4-ryY"/>
@@ -561,6 +570,7 @@
                         <outlet property="body" destination="wCq-Vx-DYi" id="F8W-Fl-LyJ"/>
                         <outlet property="collectionView" destination="eqI-XH-80w" id="v5y-x4-ngD"/>
                         <outlet property="dairyTitle" destination="cIr-1W-L8e" id="7gA-sw-Xct"/>
+                        <outlet property="diaryDate" destination="xRW-bV-NIb" id="DNi-w7-3WD"/>
                         <outlet property="lyrics" destination="88T-HO-Sfg" id="wqR-mx-1IM"/>
                         <outlet property="songTitle" destination="vgm-go-oUi" id="zJa-u9-CI9"/>
                     </connections>

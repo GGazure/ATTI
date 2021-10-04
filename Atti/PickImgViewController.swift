@@ -92,6 +92,7 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imgCell", for: indexPath) as! imgCell
         
+        cell.img.backgroundColor = .white
         cell.img.image = squareImg(img: userSelectedImages[indexPath.row], length: collectionView.bounds.width-100)
         
         return cell
@@ -104,7 +105,7 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
         var reW = CGFloat(0)
         var reH = CGFloat(0)
         let sizeRatio = length / max(img.size.width, img.size.height)
-        if img.size.width > img.size.height {
+        if img.size.width < img.size.height {
             reW = length
             reH = img.size.height * sizeRatio
         }

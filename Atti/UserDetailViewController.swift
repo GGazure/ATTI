@@ -42,8 +42,10 @@ class UserDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     var imageArray = [UIImage]()
     
     @IBOutlet weak var dairyTitle: UILabel!
+    @IBOutlet weak var diaryDate: UILabel!
     @IBOutlet weak var body: UITextView!
     var titlestr: String = ""
+    var datestr: String = ""
     var bodystr: String = ""
     
     override func viewDidLoad() {
@@ -52,6 +54,7 @@ class UserDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.delegate = self
         collectionView.dataSource = self
         dairyTitle.text = titlestr
+        diaryDate.text = datestr
         body.text = bodystr
         
         let feelingInd = dic[feelings]!

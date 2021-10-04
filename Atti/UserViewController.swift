@@ -75,14 +75,14 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
         
+        cell.DiaryImg.layer.cornerRadius = 8
         if list[indexPath.row].value(forKey: "imgSize") as! Int > 0 {
             let unencodedData = list[indexPath.row].value(forKey: "img0") as? Data
-            cell.DiaryImg.image = UIImage(data: unencodedData!)
+            cell.DiaryImg.image = squareImg(img: UIImage(data: unencodedData!)!, length: (cell.DiaryImg.image?.size.width)!)
         }
         else {
             cell.DiaryImg.image = UIImage(named: "Unknown")
         }
-        
         
         let date = list[indexPath.row].value(forKey: "writedate") as! NSDate
         let dateFormatter = DateFormatter()
@@ -97,6 +97,28 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.layer.cornerRadius = 8
         
         return cell
+    }
+    
+    func squareImg(img: UIImage, length: CGFloat = 100) -> UIImage? {
+        UIGraphicsBeginImageContext(CGSize(width: length, height: length))
+        UIRectFill(CGRect(x: 0, y: 0, width: length, height: length))
+        
+        var reW = CGFloat(0)
+        var reH = CGFloat(0)
+        let sizeRatio = length / max(img.size.width, img.size.height)
+        if img.size.width < img.size.height {
+            reW = length
+            reH = img.size.height * sizeRatio
+        }
+        else {
+            reH = length
+            reW = img.size.width * sizeRatio
+        }
+        
+        img.draw(in: CGRect(x: length/2 - reW/2, y: length/2 - reH/2, width: reW, height: reH))
+        let reImg = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return reImg
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) ->
@@ -178,6 +200,12 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
             print(selected, sz)
             nextVC.titlestr = list[selected].value(forKey: "title") as! String
+            
+            let date = list[selected].value(forKey: "writedate") as! NSDate
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM.dd.HH:mm"
+            nextVC.datestr = dateFormatter.string(from: date as Date)
+            
             nextVC.bodystr = list[selected].value(forKey: "body") as! String
             nextVC.feelings = list[selected].value(forKey: "feeling") as! String
             
