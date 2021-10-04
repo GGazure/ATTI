@@ -21,7 +21,11 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var body: UITextView!
     
+    var isRewrite: Bool = false
     var titlestr: String = "무제"
+    var rwtitlestr: String = ""
+    var rwbodystr: String = ""
+    var rwsz: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,11 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
         body.layer.borderWidth = 1.0
         body.layer.borderColor = UIColor.black.cgColor
 
+        if isRewrite == true {
+            titleText.text = rwtitlestr
+            body.text = rwbodystr
+        }
+        
     }
     @IBAction func saveDiary(_ sender: Any) {
         print("다이어리 쓰기")
@@ -186,8 +195,48 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
     }
     
+    func updateData(feelings: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Diary")
+        fetchRequest.predicate = NSPredicate(format: "body = %@", rwbodystr)
+        do {
+            let test = try managedContext.fetch(fetchRequest)
+            let objectUpdate = test[0] as! NSManagedObject
+            
+            if titleText.text != "" {
+                titlestr = titleText.text!
+            }
+            objectUpdate.setValue(titlestr, forKey: "title")
+            objectUpdate.setValue(body.text, forKey: "body")
+            objectUpdate.setValue(feelings, forKey: "feeling")
+            print("수정된 감정: " + feelings)
+            if rwsz < userSelectedImages.count {
+                for i in rwsz-1..<userSelectedImages.count {
+                    objectUpdate.setValue(userSelectedImages[i].pngData(), forKey: "img" + String(i))
+                }
+                objectUpdate.setValue(userSelectedImages.count, forKey: "imgSize")
+            }
+            
+            do {
+                try managedContext.save()
+            } catch {
+                print(error)
+            }
+            self.navigationController?.popToRootViewController(animated: true)
+        } catch {
+            print(error)
+        }
+        
+    }
+    
     func afterGetFeelings(feelings: String) {
-        print("다이어리 저장")
+        print("다이어리 저장 " + feelings)
+        
+        if isRewrite == true {
+            updateData(feelings: feelings)
+            return
+        }
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -213,7 +262,7 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         self.navigationController?.popToRootViewController(animated: true)
     }
-    
+ 
 }
    
 // https://app.quicktype.io

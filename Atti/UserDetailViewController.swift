@@ -69,6 +69,18 @@ class UserDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueRewrite" {
+            let nextVC = segue.destination as! PickImgViewController
+            
+            nextVC.userSelectedImages = imageArray
+            nextVC.rwtitlestr = self.titlestr
+            nextVC.rwbodystr = self.bodystr
+            nextVC.rwsz = self.imageArray.count
+            nextVC.isRewrite = true
+        }
+    }
+    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         imageArray.count
