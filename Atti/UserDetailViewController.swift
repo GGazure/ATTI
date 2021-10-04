@@ -34,6 +34,7 @@ class UserDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var dic: [String:Int] = ["기쁨":0, "신뢰":1, "공포":2, "놀라움":3, "슬픔":4, "혐오":5, "분노":6, "기대":7]
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var lyrics: UILabel!
     var feelings: String = ""
@@ -57,10 +58,15 @@ class UserDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         diaryDate.text = datestr
         body.text = bodystr
         
+        stackView.layer.borderWidth = 2
+        stackView.layer.borderColor = #colorLiteral(red: 0.9121496456, green: 0.9121496456, blue: 0.9121496456, alpha: 1)
+        stackView.layer.cornerRadius = 8
+        
         let feelingInd = dic[feelings]!
         let lyricind = Int.random(in: 0...arr[feelingInd].count-1)
         lyrics.text = arr[feelingInd][lyricind].0
-        songTitle.text = arr[feelingInd][lyricind].1
+        songTitle.text = "🎶 " + arr[feelingInd][lyricind].1
+        
     }
     
 

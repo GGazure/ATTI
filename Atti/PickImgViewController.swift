@@ -18,9 +18,7 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
     var selectedAssets: [PHAsset] = []
     var userSelectedImages: [UIImage] = []
     
-    @IBAction func title(_ sender: UITextField) {
-        titlestr = sender.text ?? "무제"
-    }
+    @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var body: UITextView!
     
     var titlestr: String = "무제"
@@ -195,6 +193,9 @@ class PickImgViewController: UIViewController, UICollectionViewDelegate, UIColle
         let context = appDelegate.persistentContainer.viewContext
         
         let object = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: context)
+        if titleText.text != "" {
+            titlestr = titleText.text!
+        }
         object.setValue(titlestr, forKey: "title")
         object.setValue(body.text, forKey: "body")
         object.setValue(Date(), forKey: "writedate")
