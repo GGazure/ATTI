@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnAdd: UIBarButtonItem!
@@ -41,7 +41,43 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
+        longPressedGesture.minimumPressDuration = 0.5
+        longPressedGesture.delegate = self
+        longPressedGesture.delaysTouchesBegan = true
+        collectionView?.addGestureRecognizer(longPressedGesture)
 
+    }
+    
+    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        if (gestureRecognizer.state != .began) {
+            return
+        }
+
+        let p = gestureRecognizer.location(in: collectionView)
+
+        if let indexPath = collectionView?.indexPathForItem(at: p) {
+            print("Long press at item: \(indexPath.row)")
+            
+            var cell = self.collectionView.cellForItem(at: indexPath) as! DiaryCell
+            // 메시지창 컨트롤러 인스턴스 생성
+            let alert = UIAlertController(title: "삭제", message: "\"" + cell.Diarytitle.text! + "\" 다이어리를 삭제합니다.", preferredStyle: UIAlertController.Style.alert)
+
+            // 메시지 창 컨트롤러에 들어갈 버튼 액션 객체 생성
+            let cancelAction = UIAlertAction(title: "cancel", style: UIAlertAction.Style.cancel, handler: nil)
+            let destructiveAction = UIAlertAction(title: "delete", style: UIAlertAction.Style.destructive){(_) in
+                
+                self.mydelete(object: self.list[indexPath.row])
+            }
+
+            //메시지 창 컨트롤러에 버튼 액션을 추가
+            alert.addAction(cancelAction)
+            alert.addAction(destructiveAction)
+
+            //메시지 창 컨트롤러를 표시
+            self.present(alert, animated: false)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
