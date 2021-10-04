@@ -19,26 +19,31 @@ class GlobalDetailViewController: UIViewController, UICollectionViewDelegate, UI
     var imageArray = [UIImage]()
     var diaryDetail: Diary?
     var ref: DatabaseReference!
-
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
+        // Firebase 버튼
         let editButton = UIBarButtonItem(title: "수정", style: .plain, target: self, action: #selector(editDiary))
         let deleteButton = UIBarButtonItem(title: "삭제", style: .plain, target: self, action: #selector(deleteBtnClicked))
         let uploadButton = UIBarButtonItem(title: "업로드", style: .plain, target: self, action: #selector(uploadToDatabase))
         
         navigationItem.rightBarButtonItems = [deleteButton,editButton,uploadButton]
+        
         diaryTitle.text = diaryDetail?.title
         diaryContent.text = diaryDetail?.content
         
+        let imageURL = URL(string: diaryDetail!.imageURL)
+        let data = try? Data(contentsOf: imageURL!)
+        imageArray.append(UIImage(data: data!)!)
         
         diaryTitle.isUserInteractionEnabled = true
         diaryContent.isUserInteractionEnabled = true
         
-        imageArray = [#imageLiteral(resourceName: "Unknown-3"),#imageLiteral(resourceName: "Unknown"),#imageLiteral(resourceName: "Unknown-1"),#imageLiteral(resourceName: "Unknown-2")]
+//        imageArray = [#imageLiteral(resourceName: "KakaoTalk_Photo_2021-10-04-15-12-48.jpeg"),#imageLiteral(resourceName: "Unknown-3"),#imageLiteral(resourceName: "Unknown"),#imageLiteral(resourceName: "Unknown-1"),#imageLiteral(resourceName: "Unknown-2")]
     }
     
     // Firebase - 다이어리 수정
@@ -81,7 +86,6 @@ class GlobalDetailViewController: UIViewController, UICollectionViewDelegate, UI
         // Option1 : id 알 수 있는 경우
 //       let diaryID = diaryDetail?.id
 //       ref.child("Item\(diaryID!)").removeValue()
-        
     
         // Option2 : id 모르는 경우 특정 값 검색하기
        let diaryName = diaryDetail?.title
@@ -106,9 +110,9 @@ class GlobalDetailViewController: UIViewController, UICollectionViewDelegate, UI
                 }
             }
         }
-        
         navigationController?.popViewController(animated: true)
     }
+    
     
     // FireStorage - image 저장
     func uploadImage(_ image: UIImage, completion: @escaping (_ url: URL?) -> ()) {
@@ -134,6 +138,7 @@ class GlobalDetailViewController: UIViewController, UICollectionViewDelegate, UI
             }
         }
     }
+    
     
     func saveImage(title: String, imageURL:URL, completion: @escaping ((_  url: URL?) -> ())) {
         let object: [String: String] = [
@@ -163,6 +168,7 @@ extension GlobalDetailViewController {
     // cell 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.bounds.height
+        
         return CGSize(width: height/4*3, height: height)
     }
  

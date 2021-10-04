@@ -67,6 +67,7 @@ class GlobalViewController: UIViewController, UICollectionViewDelegate, UICollec
         let data = try? Data(contentsOf: imageURL!)
         
         cell.globalImage.image = UIImage(data: data!)
+        cell.globalImage.contentMode = .scaleAspectFill
         cell.globalTitle.text = diaryList[indexPath.row].title
         
         cell.layer.borderWidth = 1
