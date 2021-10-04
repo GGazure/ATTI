@@ -19,6 +19,7 @@
 		2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */; };
 		2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */; };
 		4DE59EBA93504C121A1FC4BA /* Pods_Atti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6A4A5F79A0F536B373E062 /* Pods_Atti.framework */; };
+		AF316F1B270ACBAD00B0DD20 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF316F1A270ACBAD00B0DD20 /* UserDetailViewController.swift */; };
 		AF3F80402702C5DE0094F0FB /* PickImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3F803F2702C5DE0094F0FB /* PickImgViewController.swift */; };
 		AFECB55527019144001469DD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFECB55327019144001469DD /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
 		2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDetailViewController.swift; sourceTree = "<group>"; };
+		AF316F1A270ACBAD00B0DD20 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		AF3F803F2702C5DE0094F0FB /* PickImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImgViewController.swift; sourceTree = "<group>"; };
 		AFECB55427019144001469DD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DF609EBEE52DC89045064FDA /* Pods-Atti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atti.release.xcconfig"; path = "Target Support Files/Pods-Atti/Pods-Atti.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				2B24E2E426F0ED7E0068A173 /* Assets.xcassets */,
 				2B24E2E626F0ED7E0068A173 /* LaunchScreen.storyboard */,
 				2B24E2E926F0ED7E0068A173 /* Info.plist */,
+				AF316F1A270ACBAD00B0DD20 /* UserDetailViewController.swift */,
 			);
 			path = Atti;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				2B24E2FC26F0FAF20068A173 /* PlayViewController.swift in Sources */,
 				AF3F80402702C5DE0094F0FB /* PickImgViewController.swift in Sources */,
 				2B24E2F326F0F5C80068A173 /* HomeViewController.swift in Sources */,
+				AF316F1B270ACBAD00B0DD20 /* UserDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

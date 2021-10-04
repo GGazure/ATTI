@@ -12,6 +12,8 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnAdd: UIBarButtonItem!
+    var isSelected: Bool = false
+    var selected: Int = -1
     
     var list: [NSManagedObject]!
     
@@ -46,28 +48,6 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         list = self.fetch()
         collectionView.reloadData()
     }
-    
-    /*
-    @objc func addPost() -> Bool {
-        print("다이어리 쓰기")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let object = NSEntityDescription.insertNewObject(forEntityName: "Diary", into: context)
-        object.setValue("New", forKey: "title")
-        object.setValue(Date(), forKey: "writedate")
-        
-        do{
-            try context.save()
-            self.list.insert(object, at: 0)
-            self.collectionView.reloadData()
-            return true
-        } catch {
-            context.rollback()
-            return false
-        }
-    }
- */
     
     func mydelete(object: NSManagedObject) -> Bool {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -175,8 +155,35 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView,
       didSelectItemAt indexPath: IndexPath) {
         print("Cell \(indexPath.row) clicked")
-        mydelete(object: list[indexPath.row])
+        // mydelete(object: list[indexPath.row])
+        selected = indexPath.row
+        isSelected = true
+        self.performSegue(withIdentifier: "SegueUserDetailVC", sender: indexPath)
       }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if isSelected == true && segue.identifier == "SegueUserDetailVC" {
+            isSelected = false
+            let nextVC = segue.destination as! UserDetailViewController
+            
+            var sz = list[selected].value(forKey: "imgSize") as! Int
+            if sz > 0 {
+                for i in 0..<sz {
+                    let unencodedData = list[selected].value(forKey: "img" + String(i)) as? Data
+                    nextVC.imageArray.append(UIImage(data: unencodedData!)!)
+                }
+            }
+            else {
+                nextVC.imageArray = []
+            }
+            print(selected, sz)
+            nextVC.titlestr = list[selected].value(forKey: "title") as! String
+            nextVC.bodystr = list[selected].value(forKey: "body") as! String
+            nextVC.feelings = list[selected].value(forKey: "feeling") as! String
+            
+        }
+    }
+    
 }
 
 // cell 클래스
