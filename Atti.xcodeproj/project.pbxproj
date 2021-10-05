@@ -30,7 +30,6 @@
 		92D0488E270B4EC3006F19AD /* TwitterViewTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 92D0488B270B4EC3006F19AD /* TwitterViewTemplate.html */; };
 		92D0488F270B4EC3006F19AD /* TwitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0488C270B4EC3006F19AD /* TwitterView.swift */; };
 		92D04890270B4EC3006F19AD /* TwitterHTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0488D270B4EC3006F19AD /* TwitterHTMLView.swift */; };
-		92D04892270B5567006F19AD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D04891270B5567006F19AD /* HomeView.swift */; };
 		92F4C148270B4BE00092E123 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F4C147270B4BE00092E123 /* WebKit.framework */; };
 		AF316F1B270ACBAD00B0DD20 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF316F1A270ACBAD00B0DD20 /* UserDetailViewController.swift */; };
 		AF3F80402702C5DE0094F0FB /* PickImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3F803F2702C5DE0094F0FB /* PickImgViewController.swift */; };
@@ -63,7 +62,7 @@
 		92D0488B270B4EC3006F19AD /* TwitterViewTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TwitterViewTemplate.html; sourceTree = "<group>"; };
 		92D0488C270B4EC3006F19AD /* TwitterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterView.swift; sourceTree = "<group>"; };
 		92D0488D270B4EC3006F19AD /* TwitterHTMLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterHTMLView.swift; sourceTree = "<group>"; };
-		92D04891270B5567006F19AD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		92D04893270B58C9006F19AD /* Nickainley-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nickainley-Normal.otf"; path = "../../../Downloads/Nickainley-Normal.otf"; sourceTree = "<group>"; };
 		92F4C147270B4BE00092E123 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		AF316F1A270ACBAD00B0DD20 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		AF3F803F2702C5DE0094F0FB /* PickImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImgViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +126,7 @@
 				2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */,
 				2B24E2F826F0F60F0068A173 /* UserViewController.swift */,
 				AFECB55327019144001469DD /* Model.xcdatamodeld */,
+				92D04893270B58C9006F19AD /* Nickainley-Normal.otf */,
 				2B24E2E426F0ED7E0068A173 /* Assets.xcassets */,
 				2B24E2E626F0ED7E0068A173 /* LaunchScreen.storyboard */,
 				2B24E2E926F0ED7E0068A173 /* Info.plist */,
@@ -149,7 +149,6 @@
 			children = (
 				92D0487A270B4E55006F19AD /* Instagram */,
 				92D04879270B4E4C006F19AD /* Twitter */,
-				92D04891270B5567006F19AD /* HomeView.swift */,
 			);
 			path = SNS;
 			sourceTree = "<group>";
@@ -299,7 +298,6 @@
 				2B24E2F926F0F60F0068A173 /* UserViewController.swift in Sources */,
 				92D04888270B4EBD006F19AD /* Story.swift in Sources */,
 				2B24E2F626F0F5F00068A173 /* GlobalViewController.swift in Sources */,
-				92D04892270B5567006F19AD /* HomeView.swift in Sources */,
 				2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */,
 				2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */,
 				AFECB55527019144001469DD /* Model.xcdatamodeld in Sources */,
