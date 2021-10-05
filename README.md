@@ -5,6 +5,12 @@
 ## 사용한 오픈소스
 ### API
 saltlux.ai - 텍스트 감정 분석
+Instagram api
+Sportify API
+
+### 오픈소스 SW
+트위터 웹 크롤링
+Firebase
 
 ### 라이브러리
 CocoaPods로 설치  
