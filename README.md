@@ -41,3 +41,5 @@ CocoaPods로 설치
 **PickImgViewController.swift**: saltlux.ai의 텍스트 감정 분석을 사용하여 사용자가 작성한 다이어리 내용을 분석하여 8가지 감정으로 나눔.  
 
 ---
+### 10.05
+**SNSViewController.swift** : SNS 뷰에 인스타그램 API와 트위터 크롤링을 통해 해당 SNS에 게시된 아티스트의 게시물(이미지 및 텍스트)을 앱에 연결하여 사용자가 여러 SNS에 있는 아티스트의 소식을 한 번에 확인할 수 있게 하였습니다.
