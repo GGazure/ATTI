@@ -31,18 +31,18 @@ CocoaPods로 설치
 // zeplin 등으로 구상
 
 
-#### 09.15
+### 09.15
 * Initial Commit
 
 // 탭 바
 
-#### 09.27
+### 09.27
 **UserViewController.swift**: CollectionView로 유저뷰 제작. 로컬 DB로 Core Data 추가. 
 
 **GlobalViewController.swift**: Firebase기반 서버로 커뮤니티 뷰 생성
 
 
-#### 09.28
+### 09.28
 * 다이어리 작성 뷰 추가(PickImgViewController).  
 
 **PickImgViewController.swift**: 오픈소스 라이브러리 "BSImagePicker" 활용하여 이미지를 앨범에서 가져 옴(최대 10장). Core Data에 유저가 작성한 다이어리 내용(이미지, 본문, 내용, 날짜)을 로컬에 저장함.  
@@ -51,7 +51,7 @@ CocoaPods로 설치
 
 **GlobalDetailViewController.swift**: 작성한 다이어리 서버에 업로드, 수정, 삭제 기능 구현
 
-#### 09.29
+### 09.29
 **PickImgViewController.swift**: saltlux.ai의 텍스트 감정 분석을 사용하여 사용자가 작성한 다이어리 내용을 분석하여 8가지 감정으로 나눔.  
 
 ---
