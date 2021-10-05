@@ -4,13 +4,13 @@ class InstagramApi {
     
     static let shared = InstagramApi()
     
-    private let instagramAppID = "1217566032080009"
+    private let instagramAppID = "" //erased
     
     private let redirectURIURLEncoded = "https%3A%2F%2Fsnstest.netlify.app%2F"
     
     private let redirectURI = "https://snstest.netlify.app/"
     
-    private let app_secret = "e828f3fa188fd69b54cf1c63ebf45654"
+    private let app_secret = "" //erased
     
     private let boundary = "boundary=\(NSUUID().uuidString)"
 
