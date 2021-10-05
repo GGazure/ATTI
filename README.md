@@ -20,6 +20,8 @@ CocoaPods로 설치
   pod "Alamofire", "~> 5.2"
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'youtube-ios-player-helper'
+  pod 'Spotify', '~> 0.1'
 
 ```
 
@@ -41,6 +43,7 @@ CocoaPods로 설치
 
 **GlobalViewController.swift**: Firebase기반 서버로 커뮤니티 뷰 생성
 
+**PlayViewController.swift**: Youtube 뮤비 재생 뷰 
 
 ### 09.28
 * 다이어리 작성 뷰 추가(PickImgViewController).  
