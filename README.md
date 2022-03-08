@@ -62,3 +62,7 @@ https://drive.google.com/file/d/1vwCkmGRrudPiYtAKiOvlkC0iHfrkWwDJ/view?usp=shari
 ---
 ### 10.05
 **SNSViewController.swift** : SNS 뷰에 인스타그램 API와 트위터 크롤링을 통해 해당 SNS에 게시된 아티스트의 게시물(이미지 및 텍스트)을 앱에 연결하여 사용자가 여러 SNS에 있는 아티스트의 소식을 한 번에 확인할 수 있게 하였습니다.
+
+---
+### 2022.03.08
+**twitter, instagram 폴더** : 트위터와 인스타그램을 웹뷰를 통해 볼 수 있도록 
