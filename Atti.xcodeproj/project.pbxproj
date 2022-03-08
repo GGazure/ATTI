@@ -19,6 +19,7 @@
 		2B24E30026F0FB1E0068A173 /* SNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */; };
 		2B50728326F47A60001B03F4 /* GlobalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */; };
 		4DE59EBA93504C121A1FC4BA /* Pods_Atti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6A4A5F79A0F536B373E062 /* Pods_Atti.framework */; };
+		92626EC32799A6B800965A81 /* NewInstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92626EC22799A6B800965A81 /* NewInstagramView.swift */; };
 		92D04883270B4EBD006F19AD /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0487B270B4EBC006F19AD /* InstagramView.swift */; };
 		92D04884270B4EBD006F19AD /* InstagramApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0487C270B4EBC006F19AD /* InstagramApi.swift */; };
 		92D04885270B4EBD006F19AD /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D0487D270B4EBC006F19AD /* StoryView.swift */; };
@@ -51,6 +52,7 @@
 		2B24E2FB26F0FAF20068A173 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		2B24E2FF26F0FB1E0068A173 /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
 		2B50728226F47A60001B03F4 /* GlobalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDetailViewController.swift; sourceTree = "<group>"; };
+		92626EC22799A6B800965A81 /* NewInstagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInstagramView.swift; sourceTree = "<group>"; };
 		92D0487B270B4EBC006F19AD /* InstagramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
 		92D0487C270B4EBC006F19AD /* InstagramApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramApi.swift; sourceTree = "<group>"; };
 		92D0487D270B4EBC006F19AD /* StoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				92D04880270B4EBC006F19AD /* Story.swift */,
 				92D0487D270B4EBC006F19AD /* StoryView.swift */,
 				92D0487F270B4EBC006F19AD /* WebView.swift */,
+				92626EC22799A6B800965A81 /* NewInstagramView.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -189,7 +192,7 @@
 				2B24E2D426F0ED790068A173 /* Sources */,
 				2B24E2D526F0ED790068A173 /* Frameworks */,
 				2B24E2D626F0ED790068A173 /* Resources */,
-				5256D36BF954CE91BEB5103A /* [CP] Embed Pods Frameworks */,
+				2B2FE61F2904B0B651DE30FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,7 +272,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5256D36BF954CE91BEB5103A /* [CP] Embed Pods Frameworks */ = {
+		2B2FE61F2904B0B651DE30FD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92626EC32799A6B800965A81 /* NewInstagramView.swift in Sources */,
 				2B24E2DC26F0ED790068A173 /* AppDelegate.swift in Sources */,
 				92D04887270B4EBD006F19AD /* WebView.swift in Sources */,
 				2B24E2F926F0F60F0068A173 /* UserViewController.swift in Sources */,
@@ -462,7 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Q6MH57SWY;
+				DEVELOPMENT_TEAM = 9TWAKVPQXY;
 				INFOPLIST_FILE = Atti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

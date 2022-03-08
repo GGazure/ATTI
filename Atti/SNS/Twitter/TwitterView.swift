@@ -33,7 +33,7 @@ struct TwitterView: View {
                 }
             }
             .edgesIgnoringSafeArea(.vertical)
-            .navigationBarTitle("Twitter").navigationBarItems(leading: NavigationLink("instagram",destination: InstagramView()).navigationBarTitle("",displayMode:.inline).navigationBarHidden(isActive)
+            .navigationBarTitle("Twitter").navigationBarItems(leading: NavigationLink("instagram",destination: NewInstagramView()).navigationBarTitle("",displayMode:.inline).navigationBarHidden(isActive)
                                                                               ,
                 trailing: Link(destination: newTweetURL, label: {
                 HStack {
